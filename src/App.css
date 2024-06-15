@@ -2,16 +2,31 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: black;
   padding: 20px;
   background-image: url(trip.jpeg);
   background-size: cover;
+}
+/* Header styles */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  color: #8a2be2; /* Purple color for company name */
+}
+
+.header-divider {
+  width: 100%;
+  height: 2px;
+  background-color: #8a2be2; /* Purple color for divider line */
+  margin: 10px 0 20px; /* Adjust margin as needed */
 }
 
 .App {
   max-width: 800px;
   margin: 0 auto;
-  background-color: rgba(22, 67, 190, 0.8);
+  background-color: rgba(114, 174, 248, 0.815);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -20,7 +35,12 @@ body {
 h1 {
   text-align: center;
   margin-bottom: 20px;
-  color: violet;
+  color: rgb(185, 11, 243);
+}
+h2{
+  text-align: center;
+  margin-bottom: 15px;
+  color: black;
 }
 
 /* Task input form */
@@ -37,15 +57,15 @@ form input[type="text"] {
 
 form button {
   padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
+  background-color: #32e1e4;
+  color: black;
   border: none;
   cursor: pointer;
   font-size: 16px;
 }
 
 form button:hover {
-  background-color: #45a049;
+  background-color: #2ad232;
 }
 
 /* Task list */
@@ -55,27 +75,29 @@ form button:hover {
 }
 
 .task-item {
-  background-color: #ffffff;
+  background-color: #e9e2e2;
   border-radius: 8px;
   margin-bottom: 12px;
   padding: 12px;
-  transition: box-shadow 0.3s ease;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex; /* Display as flex container */
-  justify-content: space-between; /* Space evenly between content and buttons */
-  align-items: center; /* Center align items vertically */
+  transition: box-shadow 0.5s ease, transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0px 2px 4px rgba(202, 10, 10, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .task-item:hover {
-  box-shadow: 0px 4px 8px rgb(5, 5, 222); /* Blue shadow on hover */
+  box-shadow: 0px 8px 16px red;
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .task-item-content {
-  flex: 1; /* Expand content to fill available space */
+  flex: 1;
 }
 
 .task-details {
-  margin-bottom: 8px; /* Space between title and description */
+  margin-bottom: 8px;
 }
 
 .task-title {
@@ -84,6 +106,11 @@ form button:hover {
 
 .task-description {
   color: #666666;
+  transition: color 0.3s ease;
+}
+
+.task-description:hover {
+  color: #000000; /* Change text color on hover */
 }
 
 .task-date {
@@ -92,7 +119,7 @@ form button:hover {
 
 .task-actions {
   display: flex;
-  gap: 10px; /* Space between buttons */
+  gap: 10px;
 }
 
 .delete-button {
@@ -104,7 +131,7 @@ form button:hover {
 }
 
 .delete-button:hover {
-  background-color: #bd2130;
+  background-color: red;
 }
 
 button {
@@ -123,5 +150,5 @@ button:hover {
   padding: 12px;
   text-align: center;
   font-style: italic;
-  color: #999999;
+  color: #bd2130;
 }

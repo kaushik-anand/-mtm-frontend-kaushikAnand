@@ -1,4 +1,4 @@
-// src/components/TaskList.js
+
 import React from 'react';
 
 const TaskList = ({ tasks, updateTask, deleteTask }) => {
@@ -23,7 +23,7 @@ const TaskList = ({ tasks, updateTask, deleteTask }) => {
           <li key={task.id} className="task-item">
             <div className="task-item-content">
               <div className="task-details">
-                <div>
+                <div className="task-title">
                   <strong>Task:</strong> {task.title}
                 </div>
                 <div className="task-description">

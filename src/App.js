@@ -1,7 +1,6 @@
-// src/App.js
 import React, { useState, useEffect } from 'react';
 import TaskInput from './components/TaskInput';
-import TaskList from './components/TaskList'; // Import Pagination component
+import TaskList from './components/TaskList';
 import './App.css';
 
 const App = () => {
@@ -10,7 +9,7 @@ const App = () => {
     return savedTasks ? JSON.parse(savedTasks) : [];
   });
 
-  const [viewAllTasks, setViewAllTasks] = useState(false); // Define viewAllTasks state
+  const [viewAllTasks, setViewAllTasks] = useState(false);
 
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -38,24 +37,30 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Itinerary Planner</h1>
-      <TaskInput addTask={addTask} />
-      {tasks.length === 0 && !viewAllTasks && (
-        <p>No tasks added yet.</p>
-      )}
-      {viewAllTasks && tasks.length > 0 && (
-        <>
-          <TaskList tasks={tasks} updateTask={updateTask} deleteTask={deleteTask} />
+      <header className="header">
+        <h1>My Trip Mates</h1>
+        <div className="header-divider"></div>
+      </header>
+      <div className="itinerary-section">
+        <h2>ITINERARY Planner</h2>
+        <TaskInput addTask={addTask} />
+        {tasks.length === 0 && !viewAllTasks && (
+          <p>No tasks added yet.</p>
+        )}
+        {viewAllTasks && tasks.length > 0 && (
+          <>
+            <TaskList tasks={tasks} updateTask={updateTask} deleteTask={deleteTask} />
+            <div className="button-group">
+              <button onClick={handleHideAllTasks}>Hide All Tasks</button>
+            </div>
+          </>
+        )}
+        {!viewAllTasks && tasks.length > 0 && (
           <div className="button-group">
-            <button onClick={handleHideAllTasks}>Hide All Tasks</button>
+            <button onClick={handleViewAllTasks}>View All Tasks</button>
           </div>
-        </>
-      )}
-      {!viewAllTasks && tasks.length > 0 && (
-        <div className="button-group">
-          <button onClick={handleViewAllTasks}>View All Tasks</button>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };
