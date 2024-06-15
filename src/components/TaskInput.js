@@ -8,21 +8,17 @@ const TaskInput = ({ addTask }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (taskTitle.trim() && taskDescription.trim() && taskDate && new Date(taskDate) >= new Date()) {
+    if (taskTitle.trim() && taskDescription.trim() && taskDate.trim()) {
       addTask({ title: taskTitle, description: taskDescription, date: taskDate });
       setTaskTitle('');
       setTaskDescription('');
       setTaskDate('');
     } else {
-      if (!taskTitle.trim() || !taskDescription.trim()) {
-        alert('Both task title and description are required');
-      } else if (!taskDate) {
-        alert('Task date is required');
-      } else {
-        alert('Task date cannot be before the current date');
-      }
+      alert('All fields are required');
     }
   };
+
+  const today = new Date().toISOString().split('T')[0];
 
   return (
     <form onSubmit={handleSubmit} className="task-input">
@@ -41,7 +37,7 @@ const TaskInput = ({ addTask }) => {
       <input
         type="date"
         value={taskDate}
-        min={new Date().toISOString().split('T')[0]} // Set minimum date to current date
+        min={today}
         onChange={(e) => setTaskDate(e.target.value)}
       />
       <button type="submit">Add Task</button>
