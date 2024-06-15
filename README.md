@@ -1,5 +1,9 @@
 # Getting Started with Create React App
 
+### Hosting
+
+The application is hosted on Vercel. You can access it [here](https://mtm-frontend-kaushik-anand.vercel.app/).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -45,6 +49,4 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Hosting
 
-The application is hosted on Vercel. You can access it [here](https://mtm-frontend-kaushik-anand.vercel.app/).
