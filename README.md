@@ -49,4 +49,6 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+The application is hosted on Netlify. You can access it [here](https://itineraryplanner-mtm-kaushik.netlify.app/).
+
 
