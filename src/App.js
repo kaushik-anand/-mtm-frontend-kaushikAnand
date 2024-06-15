@@ -42,7 +42,7 @@ const App = () => {
         <div className="header-divider"></div>
       </header>
       <div className="itinerary-section">
-        <h2>ITINERARY Planner</h2>
+        <h2>ITINERARY PLANNER</h2>
         <TaskInput addTask={addTask} />
         {tasks.length === 0 && !viewAllTasks && (
           <p>No tasks added yet.</p>
